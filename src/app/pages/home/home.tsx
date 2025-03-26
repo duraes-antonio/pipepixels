@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Sidebar } from '@/app/components/sidebar';
-import { ImageSection } from '@/app/components/image-section/image-section';
+import { Dropzone } from '@/app/components/dropzone/dropzone';
 import { ImagesProvider } from '@/app/shared/state/images.state';
 
 function HomePage() {
@@ -10,7 +10,7 @@ function HomePage() {
             <div className="grid grid-cols-[auto_1fr] w-full h-[calc(100dvh-40px*2)]">
                 <Sidebar />
                 <div className="p-6">
-                    <ImageSection />
+                    <Dropzone />
                 </div>
             </div>
         </ImagesProvider>

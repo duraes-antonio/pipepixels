@@ -2,7 +2,7 @@
 
 import React, { memo, useContext, useMemo } from 'react';
 import { useDropzone } from 'react-dropzone';
-import styles from './image-section.module.scss';
+import styles from './dropzone.module.scss';
 import { ImagesContext } from '@/app/shared/state/images.state';
 
 const texts = {
@@ -14,7 +14,7 @@ const texts = {
 };
 
 function DragDropInput() {
-    const { state, setState } = useContext(ImagesContext);
+    const { setState } = useContext(ImagesContext);
 
     const onDrop = (acceptedFiles: File[]) => {
         setState(acceptedFiles);
@@ -66,6 +66,6 @@ function DragDropInput() {
     );
 }
 
-export const ImageSection = memo(DragDropInput);
+export const Dropzone = memo(DragDropInput);
 
-export default ImageSection;
+export default Dropzone;
