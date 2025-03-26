@@ -1,0 +1,11 @@
+%flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+%flex-center {
+    display: flex;
+    place-content: center;
+    place-items: center;
+}
+

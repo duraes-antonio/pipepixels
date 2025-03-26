@@ -1,0 +1,25 @@
+/**
+ * Variables for import in other scss files to avoid hardcoding colors.
+ */
+$var-primary-color: var(--primary-color);
+$var-secondary-color: var(--secondary-color);
+$var-background-color: var(--background-color);
+$var-text-primary: var(--text-primary-color);
+$var-text-secondary: var(--text-secondary-color);
+
+$var-alert-success: var(--alert-success);
+$var-alert-error: var(--alert-error);
+$var-alert-warning: var(--alert-warning);
+$var-border-color: var(--border-color);
+
+/**
+  * Static spacing values
+  */
+$s1: 4px;
+$s2: 8px;
+$s3: 12px;
+$s4: 16px;
+$s5: 20px;
+$s6: 24px;
+$s7: 28px;
+$s8: 32px;

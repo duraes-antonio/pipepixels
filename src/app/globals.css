@@ -1,26 +1,72 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    /* Tema claro */
+    --primary--light: fuchsia; /* Fúcsia vibrante */
+    --secondary--light: #d4b6e5; /* Lilás claro */
+    --background--light: #f8f9fa; /* Branco sujo */
+    --text-primary--light: #343a40; /* Cinza escuro para texto principal */
+    --text-secondary--light: #6c757d; /* Cinza claro para texto secundário */
+
+    /* Tema escuro */
+    --primary--dark: dodgerblue; /* Dodgerblue vibrante */
+    --secondary--dark: #b497c3; /* Lilás suave */
+    --background-primary--dark: #212529; /* Fundo escuro mais suave */
+    --background-secondary--dark: #343a40; /* Fundo secundário escuro */
+    --text-primary--dark: #f8f9fa; /* Texto claro */
+    --text-secondary--dark: #868e96; /* Cinza médio para texto secundário */
+
+    --alert-error: #e74c3c; /* Vermelho para alertas de erro */
+    --alert-success: #2ecc71; /* Verde para alertas de sucesso */
+    --alert-warning: #f39c12; /* Amarelo para alertas de aviso */
+    --border: #ccc; /* Cinza escuro para bordas */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root {
+    --primary-color: var(--primary--light);
+    --secondary-color: var(--secondary--light);
+    --background-color: var(--background--light);
+    --text-primary-color: var(--text-primary--light);
+    --text-secondary-color: var(--text-secondary--light);
+
+    --alert-error-color: var(--alert-error);
+    --alert-success-color: var(--alert-success);
+    --alert-warning-color: var(--alert-warning);
+    --border-color: var(--border);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root.dark {
+        --primary-color: var(--primary--dark);
+        --secondary-color: var(--secondary--dark);
+        --background-color: var(--background-primary--dark);
+        --background-secondary: var(--background-secondary--dark);
+        --text-primary-color: var(--text-primary--dark);
+        --text-secondary-color: var(--text-secondary--dark);
+
+        --alert-error: var(--alert-error);
+        --alert-success: var(--alert-success);
+        --alert-warning: var(--alert-warning);
+        --border-color: var(--border);
+    }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background-color);
+    color: var(--text-secondary-color);
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+@theme {
+    --color-primary: var(--primary-color);
+    --color-secondary: var(--secondary-color);
+    --color-background: var(--background-color);
+    --color-primary-text: var(--text-primary-color);
+    --color-secondary-text: var(--text-secondary-color);
+    --color-error: var(--alert-error-color);
+    --color-success: var(--alert-success-color);
+    --color-warning: var(--alert-warning-color);
+    --color-border: var(--border-color);
+}
+
+@custom-variant dark (&:where(.dark, .dark *));

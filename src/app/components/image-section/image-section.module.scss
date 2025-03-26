@@ -1,0 +1,26 @@
+@use '~@/app/shared/styles/variables.module' as *;
+@use '~@/app/shared/styles/placeholder.module' as *;
+
+.dropzone {
+    @extend %flex-center;
+    flex-direction: column;
+    background-color: $var-background-color;
+    box-sizing: border-box;
+    padding: $s4;
+    gap: $s4;
+    border-radius: $s4;
+    cursor: pointer;
+    height: max(200px, 80%);
+    transition: border-color 300ms;
+}
+
+.uploadImage {
+}
+
+.uploadButton {
+    grid-area: uploadButton;
+    background-color: $var-primary-color;
+    color: $var-text-primary;
+    padding: 6px 12px;
+    border-radius: 4px;
+}

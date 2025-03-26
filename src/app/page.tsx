@@ -1,14 +1,22 @@
+import HomePage from '@/app/pages/home/home';
+
+import { Metadata } from 'next';
+import Header from '@/app/components/header';
+import Footer from './components/footer';
+
+export const metadata: Metadata = {
+    title: 'PipePixels',
+    description: 'pipepixels.com: Magically edit multiple images',
+};
+
 export default function Home() {
     return (
-        <div
-            className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-            <header>Header</header>
-            <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-                Content
+        <>
+            <Header />
+            <main className="flex w-full flex-col gap-[32px] row-start-2 items-center">
+                <HomePage></HomePage>
             </main>
-            <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-                Footer
-            </footer>
-        </div>
+            <Footer />
+        </>
     );
 }
