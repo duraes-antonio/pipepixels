@@ -4,6 +4,7 @@ import React, { memo, useContext, useMemo } from 'react';
 import { useDropzone } from 'react-dropzone';
 import styles from './dropzone.module.scss';
 import { ImagesContext } from '@/app/shared/state/images.state';
+import { ImageList } from '@/app/components/image-list/image-list';
 
 const texts = {
     title: 'Drag and drop the images to get started!',
@@ -66,6 +67,15 @@ function DragDropInput() {
     );
 }
 
-export const Dropzone = memo(DragDropInput);
+function DropzoneInternal() {
+    const { state } = useContext(ImagesContext);
+    const component = useMemo(
+        () => (state.length ? <ImageList images={state} /> : <DragDropInput />),
+        [state],
+    );
+    return component;
+}
+
+export const Dropzone = memo(DropzoneInternal);
 
 export default Dropzone;

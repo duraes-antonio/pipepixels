@@ -1,10 +1,10 @@
 'use client';
-import React from 'react';
+import React, { memo } from 'react';
 import { Sidebar } from '@/app/components/sidebar';
 import { Dropzone } from '@/app/components/dropzone/dropzone';
 import { ImagesProvider } from '@/app/shared/state/images.state';
 
-function HomePage() {
+function HomePageInternal() {
     return (
         <ImagesProvider>
             <div className="grid grid-cols-[auto_1fr] w-full h-[calc(100dvh-40px*2)]">
@@ -16,5 +16,7 @@ function HomePage() {
         </ImagesProvider>
     );
 }
+
+const HomePage = memo(HomePageInternal);
 
 export default HomePage;
