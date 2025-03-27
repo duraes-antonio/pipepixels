@@ -1,4 +1,4 @@
-export function Sidebar() {
+export function PipelineSidebar() {
     return (
         <div className="sidebar bg-amber-200 text-black">
             <h2>Sidebar</h2>
@@ -7,4 +7,4 @@ export function Sidebar() {
     );
 }
 
-export default Sidebar;
+export default PipelineSidebar;

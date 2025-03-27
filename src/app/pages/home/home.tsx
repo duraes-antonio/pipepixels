@@ -1,14 +1,14 @@
 'use client';
 import React, { memo } from 'react';
-import { Sidebar } from '@/app/components/sidebar';
 import { Dropzone } from '@/app/components/dropzone/dropzone';
 import { ImagesProvider } from '@/app/shared/state/images.state';
+import PipelineSidebar from '@/app/components/pipeline-sidebar';
 
 function HomePageInternal() {
     return (
         <ImagesProvider>
             <div className="grid grid-cols-[auto_1fr] w-full h-[calc(100dvh-40px*2)]">
-                <Sidebar />
+                <PipelineSidebar />
                 <div className="p-6">
                     <Dropzone />
                 </div>
