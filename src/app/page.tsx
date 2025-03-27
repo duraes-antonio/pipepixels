@@ -1,8 +1,7 @@
 import HomePage from '@/app/pages/home/home';
 
 import { Metadata } from 'next';
-import Header from '@/app/components/header';
-import Footer from './components/footer';
+import React from 'react';
 
 export const metadata: Metadata = {
     title: 'PipePixels',
@@ -11,12 +10,8 @@ export const metadata: Metadata = {
 
 export default function Home() {
     return (
-        <>
-            <Header />
-            <main className="flex w-full flex-col gap-[32px] row-start-2 items-center">
-                <HomePage></HomePage>
-            </main>
-            <Footer />
-        </>
+        <div className="grid">
+            <HomePage></HomePage>
+        </div>
     );
 }
