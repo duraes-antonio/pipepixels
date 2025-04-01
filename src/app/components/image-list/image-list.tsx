@@ -15,7 +15,7 @@ function ImageListInternal(props: ImageListProps) {
         imageMetaData.set(metadata.name, metadata);
     }, []);
     return (
-        <ol className="flex gap-4">
+        <ol className="gap-4 grid grid-cols-[repeat(auto-fill,minmax(175px,1fr))] justify-items-center">
             {images.map((image, index) => (
                 <li key={index}>
                     <ImageListItem

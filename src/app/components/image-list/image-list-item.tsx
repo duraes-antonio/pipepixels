@@ -35,8 +35,8 @@ function ImageItem(props: ImageListItemProps) {
     return (
         <Image
             className="place-self-center"
-            width={200}
-            height={150}
+            width={175}
+            height={175}
             src={URL.createObjectURL(image)}
             alt={image.name}
             onLoad={(e) => onMetadataLoad(buildMetadata(e, image))}
@@ -84,9 +84,8 @@ function ImageListItemInternal(props: ImageListItemProps) {
         },
         [onMetadataLoad],
     );
-    console.log('RENDER');
     return (
-        <div className="border-primary rounded-sm border-2 w-[200px] h-full grid grid-rows-[1fr_auto] place-content-end">
+        <div className="border-primary rounded-sm border-2 h-full grid grid-rows-[1fr_auto]  w-[175px]">
             <ImageItemCached
                 image={image}
                 onMetadataLoad={handleMetadataLoad}
