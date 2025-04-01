@@ -6,9 +6,18 @@ import {
 import PipelineOperations, {
     OperationItem,
 } from '@/app/components/pipeline-operations/pipeline-operations';
-import { useState } from 'react';
+import { useContext } from 'react';
+import { PipelineContext } from '@/app/shared/state/pipeline-operations.state';
 
-function OperationCategory({ category }: { category: OperationCategoryType }) {
+export interface OperationCategoryProps {
+    category: OperationCategoryType;
+    onAddOperation: (operation: ImageOperationType) => void;
+}
+
+function OperationCategory({
+    category,
+    onAddOperation,
+}: OperationCategoryProps) {
     return (
         <li className="grid gap-y-2">
             <div className="flex items-center gap-x-2 text-secondary-text">
@@ -17,7 +26,11 @@ function OperationCategory({ category }: { category: OperationCategoryType }) {
             </div>
             <ul className="grid gap-y-2 text-secondary-text">
                 {category.operations.map((o, index) => (
-                    <OperationItem key={index} operation={o}></OperationItem>
+                    <OperationItem
+                        onAdd={(o) => onAddOperation(o)}
+                        key={index}
+                        operation={o}
+                    />
                 ))}
             </ul>
         </li>
@@ -25,15 +38,24 @@ function OperationCategory({ category }: { category: OperationCategoryType }) {
 }
 
 export function ListOperations() {
-    const [operations, setOperations] = useState<ImageOperationType[]>([]);
+    const { setState, state } = useContext(PipelineContext);
+    console.log('ListOperations');
+    const addOperation = (operation: ImageOperationType) => {
+        setState((prev) => [...prev, operation]);
+        console.log(operation, state);
+    };
     return (
         <div className="bg-background-secondary/60 p-3 grid h-[inherit] gap-y-4">
-            <PipelineOperations operations={operations} />
+            <PipelineOperations operations={state} />
 
             <h2 className="text-primary-text font-bold">Add operation</h2>
             <ol className="flex flex-col gap-y-6 overflow-auto ">
                 {operationCategories.map((category, index) => (
-                    <OperationCategory category={category} key={index} />
+                    <OperationCategory
+                        onAddOperation={(o) => addOperation(o)}
+                        category={category}
+                        key={index}
+                    />
                 ))}
             </ol>
         </div>

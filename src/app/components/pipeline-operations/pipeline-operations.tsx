@@ -2,14 +2,14 @@ import { ImageOperationType } from '@/app/components/list-operations/list-operat
 
 export interface OperationItemProps {
     operation: ImageOperationType;
-    onClick?: (operation: ImageOperationType) => void;
+    onAdd?: (operation: ImageOperationType) => void;
 }
 
 // TODO: Implement specific operation item component
-export function OperationItem(props: OperationItemProps) {
+export function OperationItem({ onAdd, operation }: OperationItemProps) {
     return (
         <li className="rounded-sm bg-background py-1 px-2">
-            <a className="font-medium text-sm">{props.operation.name}</a>
+            <a className="font-medium text-sm">{operation.name}</a>
         </li>
     );
 }
