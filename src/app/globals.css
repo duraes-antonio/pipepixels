@@ -1,31 +1,33 @@
 @import 'tailwindcss';
 
 :root {
-    /* Tema claro */
-    --primary--light: fuchsia; /* Fúcsia vibrante */
-    --secondary--light: #d4b6e5; /* Lilás claro */
-    --background--light: #f8f9fa; /* Branco sujo */
-    --text-primary--light: #343a40; /* Cinza escuro para texto principal */
-    --text-secondary--light: #6c757d; /* Cinza claro para texto secundário */
+    /* Tema Claro */
+    --primary--light: #007BFF; /* Cor principal (azul claro) */
+    --secondary--light: #6C757D; /* Cor secundária (cinza claro) */
+    --background--light: #FFF; /* Fundo principal (branco) */
+    --background-secondary--light: #EAEAEA; /* Fundo secundário (branco sujo) */
+    --text-primary--light: #222; /* Texto principal (escuro) */
+    --text-secondary--light: #6C757D; /* Texto secundário (cinza médio) */
 
-    /* Tema escuro */
-    --primary--dark: dodgerblue; /* Dodgerblue vibrante */
-    --secondary--dark: #b497c3; /* Lilás suave */
-    --background-primary--dark: #212529; /* Fundo escuro mais suave */
-    --background-secondary--dark: #343a40; /* Fundo secundário escuro */
-    --text-primary--dark: #f8f9fa; /* Texto claro */
-    --text-secondary--dark: #868e96; /* Cinza médio para texto secundário */
+    /* Tema Escuro */
+    --primary--dark: #1A73E8; /* Cor principal (azul escuro) */
+    --secondary--dark: #B0BEC5; /* Cor secundária (cinza claro) */
+    --background-primary--dark: #121212; /* Fundo principal escuro */
+    --background-secondary--dark: #333333; /* Fundo secundário escuro */
+    --text-primary--dark: #E0E0E0; /* Texto principal claro */
+    --text-secondary--dark: #B0BEC5; /* Texto secundário mais claro */
 
-    --alert-error: #e74c3c; /* Vermelho para alertas de erro */
-    --alert-success: #2ecc71; /* Verde para alertas de sucesso */
-    --alert-warning: #f39c12; /* Amarelo para alertas de aviso */
-    --border: #ccc; /* Cinza escuro para bordas */
+    --alert-error: #E74C3C; /* Vermelho para alertas de erro */
+    --alert-success: #2ECC71; /* Verde para alertas de sucesso */
+    --alert-warning: #F39C12; /* Amarelo para alertas de aviso */
+    --border: #CCC; /* Cinza escuro para bordas */
 }
 
 :root {
     --primary-color: var(--primary--light);
     --secondary-color: var(--secondary--light);
     --background-color: var(--background--light);
+    --background-secondary-color: var(--background-secondary--light);
     --text-primary-color: var(--text-primary--light);
     --text-secondary-color: var(--text-secondary--light);
 
@@ -40,7 +42,7 @@
         --primary-color: var(--primary--dark);
         --secondary-color: var(--secondary--dark);
         --background-color: var(--background-primary--dark);
-        --background-secondary: var(--background-secondary--dark);
+        --background-secondary-color: var(--background-secondary--dark);
         --text-primary-color: var(--text-primary--dark);
         --text-secondary-color: var(--text-secondary--dark);
 
@@ -61,6 +63,7 @@ body {
     --color-primary: var(--primary-color);
     --color-secondary: var(--secondary-color);
     --color-background: var(--background-color);
+    --color-background-secondary: var(--background-secondary-color);
     --color-primary-text: var(--text-primary-color);
     --color-secondary-text: var(--text-secondary-color);
     --color-error: var(--alert-error-color);
