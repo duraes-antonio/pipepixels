@@ -39,17 +39,16 @@ function OperationCategory({
 
 export function ListOperations() {
     const { setState, state } = useContext(PipelineContext);
-    console.log('ListOperations');
     const addOperation = (operation: ImageOperationType) => {
         setState((prev) => [...prev, operation]);
         console.log(operation, state);
     };
     return (
-        <div className="bg-background-secondary/60 p-3 grid h-[inherit] gap-y-4">
+        <div className="bg-background-secondary/60 py-3 pl-3 grid h-[inherit] gap-y-4">
             <PipelineOperations operations={state} />
 
             <h2 className="text-primary-text font-bold">Add operation</h2>
-            <ol className="flex flex-col gap-y-6 overflow-auto ">
+            <ol className="flex flex-col gap-y-6 overflow-auto pr-2 mr-1">
                 {operationCategories.map((category, index) => (
                     <OperationCategory
                         onAddOperation={(o) => addOperation(o)}
