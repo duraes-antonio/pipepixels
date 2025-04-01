@@ -7,7 +7,7 @@ import { ImagesContext } from '@/app/shared/state/images.state';
 import { ImageList } from '@/app/components/image-list/image-list';
 
 const texts = {
-    title: 'Drag and drop the images to get started!',
+    title: 'Drag and drop the images to batch edit',
     titleActive: 'Drop the files here...',
     subtitle:
         'Edit multiple images at once with the professional batch tool. Apply crops, resizing, filters, and effects quickly, save your settings in a macro, and reuse them whenever needed.',
@@ -26,10 +26,10 @@ function DragDropInput() {
 
     const titleParagraph = useMemo(
         () => (
-            <p
+            <h1
                 className={`${isDragActive || isFocused ? 'text-primary' : 'text-primary-text'} text-2xl font-semibold`}>
                 {isDragActive || isFocused ? texts.titleActive : texts.title}
-            </p>
+            </h1>
         ),
         [isDragActive, isFocused],
     );
