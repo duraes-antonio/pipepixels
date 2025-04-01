@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export interface ImageOperation {
+export interface ImageOperationType {
     name: string;
     description: string;
 }
@@ -8,5 +8,5 @@ export interface ImageOperation {
 export interface OperationCategoryType {
     name: string;
     icon: ReactNode;
-    operations: ImageOperation[];
+    operations: ImageOperationType[];
 }

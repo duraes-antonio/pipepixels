@@ -1,8 +1,8 @@
-import { operationCategories } from '@/app/components/pipeline-sidebar/pipeline-sidebar.const';
+import { operationCategories } from '@/app/components/list-operations/list-operations.const';
 import {
-    ImageOperation,
+    ImageOperationType,
     OperationCategoryType,
-} from './pipeline-sidebar.model';
+} from './list-operations.model';
 import PipelineOperations, {
     OperationItem,
 } from '@/app/components/pipeline-operations/pipeline-operations';
@@ -24,8 +24,8 @@ function OperationCategory({ category }: { category: OperationCategoryType }) {
     );
 }
 
-export function PipelineSidebar() {
-    const [operations, setOperations] = useState<ImageOperation[]>([]);
+export function ListOperations() {
+    const [operations, setOperations] = useState<ImageOperationType[]>([]);
     return (
         <div className="bg-background-secondary/60 p-3 grid h-[inherit] gap-y-4">
             <PipelineOperations operations={operations} />
@@ -39,5 +39,3 @@ export function PipelineSidebar() {
         </div>
     );
 }
-
-export default PipelineSidebar;

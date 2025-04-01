@@ -1,5 +1,5 @@
 import { Paintbrush, Settings, Sliders } from 'lucide-react'; // Valid icons
-import { OperationCategoryType } from './pipeline-sidebar.model';
+import { OperationCategoryType } from './list-operations.model';
 
 export const operationCategories: OperationCategoryType[] = [
     {
