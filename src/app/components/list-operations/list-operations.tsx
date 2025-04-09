@@ -3,11 +3,10 @@ import {
     ImageOperationType,
     OperationCategoryType,
 } from './list-operations.model';
-import PipelineOperations, {
-    OperationItem,
-} from '@/app/components/pipeline-operations/pipeline-operations';
 import { useContext } from 'react';
 import { PipelineContext } from '@/app/shared/state/pipeline-operations.state';
+import { OperationCard } from '@/app/components/operation-card/operation-card';
+import { PipelineOperations } from '../pipeline-operations/pipeline-operations';
 
 export interface OperationCategoryProps {
     category: OperationCategoryType;
@@ -26,7 +25,7 @@ function OperationCategory({
             </div>
             <ul className="grid gap-y-2 text-secondary-text">
                 {category.operations.map((o, index) => (
-                    <OperationItem
+                    <OperationCard
                         onAdd={(o) => onAddOperation(o)}
                         key={index}
                         operation={o}

@@ -1,20 +1,7 @@
 import { ImageOperationType } from '@/app/components/list-operations/list-operations.model';
+import { OperationCard } from '@/app/components/operation-card/operation-card';
 
-export interface OperationItemProps {
-    operation: ImageOperationType;
-    onAdd?: (operation: ImageOperationType) => void;
-}
-
-// TODO: Implement specific operation item component
-export function OperationItem({ onAdd, operation }: OperationItemProps) {
-    return (
-        <li className="rounded-sm bg-background py-1 px-2">
-            <a className="font-medium text-sm">{operation.name}</a>
-        </li>
-    );
-}
-
-function PipelineOperations({
+export function PipelineOperations({
     operations,
 }: {
     operations: ImageOperationType[];
@@ -24,11 +11,11 @@ function PipelineOperations({
             <h2 className="text-lg font-medium">Operations</h2>
             <ul className="flex flex-col gap-2">
                 {operations.map((operation, index) => (
-                    <OperationItem key={index} operation={operation} />
+                    <li key={index}>
+                        <OperationCard operation={operation} />
+                    </li>
                 ))}
             </ul>
         </div>
     );
 }
-
-export default PipelineOperations;
