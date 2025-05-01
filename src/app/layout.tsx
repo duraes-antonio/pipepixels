@@ -1,8 +1,9 @@
 import { Nunito } from 'next/font/google';
 import './globals.css';
-import React from 'react';
-import Header from '@/app/components/header';
-import Footer from '@/app/components/footer';
+import React, { ReactNode } from 'react';
+import Header from '@/app/components/header/header';
+import Footer from '@/app/components/footer/footer';
+import { ThemeProvider } from './shared/state/theme-provider';
 
 const nunito = Nunito({
     weight: ['400', '600', '700'],
@@ -10,14 +11,19 @@ const nunito = Nunito({
     subsets: ['latin'],
 });
 
-export default function RootLayout(props: { children: React.ReactNode }) {
+export default function RootLayout(props: { children: ReactNode }) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <body className={`${nunito.className} antialiased`}>
                 <div className="grid w-full">
-                    <Header />
-                    <main className="">{props.children}</main>
-                    <Footer />
+                    <ThemeProvider
+                        attribute="class"
+                        defaultTheme="light"
+                        enableSystem>
+                        <Header />
+                        <main className="">{props.children}</main>
+                        <Footer />
+                    </ThemeProvider>
                 </div>
             </body>
         </html>
