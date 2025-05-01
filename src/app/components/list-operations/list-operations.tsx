@@ -1,6 +1,6 @@
 import { operationCategories } from '@/app/components/list-operations/list-operations.const';
 import {
-    ImageOperationType,
+    ImageOperationMetadata,
     OperationCategoryType,
 } from './list-operations.model';
 import { useContext } from 'react';
@@ -10,7 +10,7 @@ import { PipelineOperations } from '../pipeline-operations/pipeline-operations';
 
 export interface OperationCategoryProps {
     category: OperationCategoryType;
-    onAddOperation: (operation: ImageOperationType) => void;
+    onAddOperation: (operation: ImageOperationMetadata) => void;
 }
 
 function OperationCategory({
@@ -26,7 +26,7 @@ function OperationCategory({
             <ul className="grid gap-y-2 text-secondary-text">
                 {category.operations.map((o, index) => (
                     <OperationCard
-                        onAdd={(o) => onAddOperation(o)}
+                        onAddAction={(o) => onAddOperation(o)}
                         key={index}
                         operation={o}
                     />
@@ -38,7 +38,7 @@ function OperationCategory({
 
 export function ListOperations() {
     const { setState, state } = useContext(PipelineContext);
-    const addOperation = (operation: ImageOperationType) => {
+    const addOperation = (operation: ImageOperationMetadata) => {
         setState((prev) => [...prev, operation]);
         console.log(operation, state);
     };
