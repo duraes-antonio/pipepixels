@@ -1,8 +1,8 @@
 'use client';
 import { createContext, Dispatch, SetStateAction, useState } from 'react';
-import { ImageOperationType } from '@/app/components/list-operations/list-operations.model';
+import { ImageOperationMetadata } from '@/app/components/list-operations/list-operations.model';
 
-type PipelineState = ImageOperationType[];
+type PipelineState = ImageOperationMetadata[];
 
 interface PipelineContextType {
     state: PipelineState;
