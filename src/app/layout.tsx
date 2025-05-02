@@ -3,7 +3,7 @@ import './globals.css';
 import React, { ReactNode } from 'react';
 import Header from '@/app/components/header/header';
 import Footer from '@/app/components/footer/footer';
-import { ThemeProvider } from './shared/state/theme-provider';
+import { ThemeProvider } from 'next-themes';
 
 const nunito = Nunito({
     weight: ['400', '600', '700'],
@@ -15,16 +15,16 @@ export default function RootLayout(props: { children: ReactNode }) {
     return (
         <html lang="en" suppressHydrationWarning>
             <body className={`${nunito.className} antialiased`}>
-                <div className="grid w-full">
-                    <ThemeProvider
-                        attribute="class"
-                        defaultTheme="light"
-                        enableSystem>
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="light"
+                    enableSystem>
+                    <div className="grid w-full">
                         <Header />
                         <main className="">{props.children}</main>
                         <Footer />
-                    </ThemeProvider>
-                </div>
+                    </div>
+                </ThemeProvider>
             </body>
         </html>
     );
